@@ -46,6 +46,7 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
 
     if (chainId === 11155111 && process.env.ETHERSCAN_API_KEY) {
         log("verifying")
+        //const raffleAddress = (await ethers.getContract("Raffle")).address
         await verify(raffle.address, args)
     }
     log("----------------------------")
